@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="迭代器，生成器," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="迭代器(Iterator)⾸先我们要理解迭代器(iterators)。根据维基百科，迭代器是⼀个让程序员可以遍历⼀个容 器（特别是列表）的对象。然⽽，⼀个迭代器在遍历并读取⼀个容器的数据元素时，并不 会执⾏⼀个迭代。这里有三个对象 - 可迭代对象(Iterable) - 迭代器(Iterator) - 迭代(Iteration)下面会逐步解释着三者之间的关系。 可迭代对象(Iterable)Pyt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="迭代器生层器理解">
+<meta property="og:url" content="http://yoursite.com/2020/05/14/%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%94%9F%E5%B1%82%E5%99%A8/index.html">
+<meta property="og:site_name" content="一个渣渣的学习之路">
+<meta property="og:description" content="迭代器(Iterator)⾸先我们要理解迭代器(iterators)。根据维基百科，迭代器是⼀个让程序员可以遍历⼀个容 器（特别是列表）的对象。然⽽，⼀个迭代器在遍历并读取⼀个容器的数据元素时，并不 会执⾏⼀个迭代。这里有三个对象 - 可迭代对象(Iterable) - 迭代器(Iterator) - 迭代(Iteration)下面会逐步解释着三者之间的关系。 可迭代对象(Iterable)Pyt">
+<meta property="article:published_time" content="2020-05-14T02:10:27.000Z">
+<meta property="article:modified_time" content="2020-05-14T02:37:57.390Z">
+<meta property="article:author" content="tomaswul">
+<meta property="article:tag" content="迭代器，生成器">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/05/14/迭代器生层器/"/>
+
+
+
+
+
+  <title>迭代器生层器理解 | 一个渣渣的学习之路</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一个渣渣的学习之路</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/14/%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%94%9F%E5%B1%82%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tomaswul">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一个渣渣的学习之路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">迭代器生层器理解</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-14T10:10:27+08:00">
+                2020-05-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="迭代器-Iterator"><a href="#迭代器-Iterator" class="headerlink" title="迭代器(Iterator)"></a>迭代器(Iterator)</h4><p>⾸先我们要理解迭代器(iterators)。根据维基百科，迭代器是⼀个让程序员可以遍历⼀个容 器（特别是列表）的对象。然⽽，⼀个迭代器在遍历并读取⼀个容器的数据元素时，并不 会执⾏⼀个迭代。这里有三个对象</p>
+<pre><code>- 可迭代对象(Iterable)
+- 迭代器(Iterator)
+- 迭代(Iteration)</code></pre><p>下面会逐步解释着三者之间的关系。</p>
+<h5 id="可迭代对象-Iterable"><a href="#可迭代对象-Iterable" class="headerlink" title="可迭代对象(Iterable)"></a>可迭代对象(Iterable)</h5><p>Python中任意的对象，只要它定义了可以返回⼀个迭代器的<strong>iter</strong>⽅法，或者定义了 可以⽀持下标索引的<strong>getitem</strong>⽅法， 那么它就是⼀个可迭代对象。简单说，可迭代对象就是能提供迭代器的任意对象。</p>
+<h5 id="迭代器-Iterator-1"><a href="#迭代器-Iterator-1" class="headerlink" title="迭代器(Iterator)"></a>迭代器(Iterator)</h5><p>任意对象，只要定义了next(Python2) 或者<strong>next</strong>⽅法，它就是⼀个迭代器。就这么 简单。</p>
+<h5 id="迭代-Iteration"><a href="#迭代-Iteration" class="headerlink" title="迭代(Iteration)"></a>迭代(Iteration)</h5><p>⽤简单的话讲，它就是从某个地⽅（⽐如⼀个列表）取出⼀个元素的过程。当我们使⽤⼀个循环来遍历某个东西时，这个过程本⾝就叫迭代。现在既然我们有了这些术语的基本理解，</p>
+<h4 id="生成器-Generators"><a href="#生成器-Generators" class="headerlink" title="生成器(Generators)"></a>生成器(Generators)</h4><p>⽣成器也是⼀种迭代器，但是你只能对其迭代⼀次。这是因为它们并没有把所有的值存在内存中，⽽是在运⾏时⽣成值。你通过遍历来使⽤它们，要么⽤⼀个“for”循环，要么将它们传递给任意可以进⾏迭代的函数和结构。⼤多数时候⽣成器是以函数来实现的。然⽽， 它们并不返回⼀个值，⽽是yield(暂且译作“⽣出”)⼀个值。这⾥有个⽣成器函数的简单例⼦：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generator_function</span><span class="params">()</span>:</span></span><br><span class="line">		<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">				<span class="keyword">yield</span> i</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> generator_function():</span><br><span class="line">		print(item)</span><br><span class="line"><span class="comment"># Output: 0</span></span><br><span class="line"><span class="comment"># 1</span></span><br><span class="line"><span class="comment"># 2</span></span><br><span class="line"><span class="comment"># 3</span></span><br><span class="line"><span class="comment"># 4</span></span><br><span class="line"><span class="comment"># 5</span></span><br><span class="line"><span class="comment"># 6</span></span><br><span class="line"><span class="comment"># 7</span></span><br><span class="line"><span class="comment"># 8</span></span><br><span class="line"><span class="comment"># 9</span></span><br></pre></td></tr></table></figure>
+
+<p>⽣成器最佳应⽤场景是：你不想同⼀时间将所有计算出来的⼤ 量结果集分配到内存当中，特别是结果集⾥还包含循环。比如下面这个例子，计算斐波那契数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fiboo</span><span class="params">(n)</span>:</span></span><br><span class="line">    a = b = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(n):</span><br><span class="line">      	<span class="keyword">yield</span> a</span><br><span class="line">        a, b = b , a + b</span><br><span class="line"><span class="comment"># 计算1-10000的斐波那契数        </span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> fiboo(<span class="number">10000</span>):</span><br><span class="line">    print(x)</span><br></pre></td></tr></table></figure>
+
+<p>用这种方式不会好废大量的资源，然后如果我们刚刚用一下这种方式的话。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fiboo</span><span class="params">(n)</span>:</span></span><br><span class="line">    a = b = <span class="number">1</span></span><br><span class="line">    fiboo_list = []</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(n):</span><br><span class="line">        fiboo_list.append(a)</span><br><span class="line">        a, b = b , a + b</span><br><span class="line">    <span class="keyword">return</span> fiboo_list</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> fiboo(<span class="number">10000</span>):</span><br><span class="line">    print(x)</span><br></pre></td></tr></table></figure>
+
+<p>这样的话会在调用fiboo函数的同时在在内存中占有1w个斐波那契数的列表，如果数值过大的话，有可能导致资源耗尽。</p>
+<p>Python内置函数：next()。它允 许我们获取⼀个序列的下⼀个元素。那我们来验证下我们的理解</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generator_function</span><span class="params">()</span>:</span></span><br><span class="line">		<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">				<span class="keyword">yield</span> i</span><br><span class="line">gen = generator_function()</span><br><span class="line">print(next(gen))</span><br><span class="line"><span class="comment"># Output: 0</span></span><br><span class="line">print(next(gen))</span><br><span class="line"><span class="comment"># Output: 1</span></span><br><span class="line">print(next(gen))</span><br><span class="line"><span class="comment"># Output: 2</span></span><br><span class="line">print(next(gen))</span><br><span class="line"><span class="comment"># Output: Traceback (most recent call last):</span></span><br><span class="line"><span class="comment"># File "&lt;stdin&gt;", line 1, in &lt;module&gt;</span></span><br><span class="line"><span class="comment"># StopIteration</span></span><br></pre></td></tr></table></figure>
+
+<p>在获取最后一个值后，在进行next会抛出一个StopIteration，而在使用for循环的时候不会，那是因为在使用for循环时，for循环自动捕获了异常，然后结束了循环</p>
+<p>python中一些内置类型也支持迭代，比如说str</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'abcdefg'</span></span><br><span class="line">next(s)</span><br><span class="line"><span class="comment"># TypeError: str object is not an iterator</span></span><br><span class="line"><span class="comment"># str类型不是一个迭代器,str类型是一个可迭代对象</span></span><br><span class="line"><span class="comment"># 我们可以使用内置函数iter把str转换成迭代器</span></span><br><span class="line">s = iter(s)</span><br><span class="line">next(s)</span><br><span class="line"><span class="comment"># Output: a</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%8C%E7%94%9F%E6%88%90%E5%99%A8/" rel="tag"># 迭代器，生成器</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/05/09/superset%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/" rel="next" title="superset使用简介">
+                <i class="fa fa-chevron-left"></i> superset使用简介
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">tomaswul</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#迭代器-Iterator"><span class="nav-number">1.</span> <span class="nav-text">迭代器(Iterator)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#可迭代对象-Iterable"><span class="nav-number">1.1.</span> <span class="nav-text">可迭代对象(Iterable)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#迭代器-Iterator-1"><span class="nav-number">1.2.</span> <span class="nav-text">迭代器(Iterator)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#迭代-Iteration"><span class="nav-number">1.3.</span> <span class="nav-text">迭代(Iteration)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成器-Generators"><span class="nav-number">2.</span> <span class="nav-text">生成器(Generators)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tomaswul</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
