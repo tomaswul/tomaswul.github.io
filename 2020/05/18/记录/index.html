@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="linux, python, cmdb" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1adf374de43c4103dcecae3b7de01035f9b78ce73  异常： sa-tools异常 &#x2F;opt&#x2F;push&#x2F;sa-tools&#x2F;sys_manage&#x2F; ![image-20200518204320569](&#x2F;Users&#x2F;wuliang&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-2020051820432056">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录">
+<meta property="og:url" content="http://yoursite.com/2020/05/18/%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="一个渣渣的学习之路">
+<meta property="og:description" content="1adf374de43c4103dcecae3b7de01035f9b78ce73  异常： sa-tools异常 &#x2F;opt&#x2F;push&#x2F;sa-tools&#x2F;sys_manage&#x2F; ![image-20200518204320569](&#x2F;Users&#x2F;wuliang&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-2020051820432056">
+<meta property="article:published_time" content="2020-05-18T12:38:51.436Z">
+<meta property="article:modified_time" content="2020-05-26T09:00:58.439Z">
+<meta property="article:author" content="tomaswul">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/05/18/记录/"/>
+
+
+
+
+
+  <title>记录 | 一个渣渣的学习之路</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一个渣渣的学习之路</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/18/%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tomaswul">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一个渣渣的学习之路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-18T20:38:51+08:00">
+                2020-05-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adf374de43c4103dcecae3b7de01035f9b78ce73</span><br></pre></td></tr></table></figure>
+
+<p>异常：</p>
+<p>sa-tools异常</p>
+<p>/opt/push/sa-tools/sys_manage/</p>
+<p>![image-20200518204320569](/Users/wuliang/Library/Application Support/typora-user-images/image-20200518204320569.png):</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d827b7e828105debe9aa3b65bf2db621de14ec48</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protoc -I$&#123;GOPATH&#125;&#x2F;pkg&#x2F;mod -I$&#123;GOPATH&#125;&#x2F;pkg&#x2F;mod&#x2F;github.com&#x2F;grpc-ecosystem&#x2F;grpc-gateway\@v1.12.1&#x2F;third_party&#x2F;googleapis -I.   --grpc-gateway_out&#x3D;logtostderr&#x3D;true:. .&#x2F;your_service.proto</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">实体(entity) :</span><br><span class="line">模板：  增&#x2F;编辑&#x2F;删&#x2F;invoke</span><br><span class="line">流水线: promote&#x2F;cancel</span><br><span class="line">环境:   增&#x2F;编辑&#x2F;删</span><br><span class="line">配置:   增&#x2F;编辑&#x2F;删</span><br><span class="line">制品:   增</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">权限校验标准:</span><br><span class="line">用户 + mod_id + env + 实体类型(每种实体 如果有权限 &#x3D;》 可认为对该实体有全部权限。)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">pipeline &#123;</span><br><span class="line">	<span class="comment">/* insert Declarative Pipeline here */</span></span><br><span class="line">    options &#123;</span><br><span class="line">        quietPeriod <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    agent  &#123;</span><br><span class="line">        docker &#123;</span><br><span class="line">            registryUrl  <span class="string">'https://bjreg.jpushoa.com'</span></span><br><span class="line">            registryCredentialsId  <span class="string">'titan-harbor-cred-id'</span></span><br><span class="line">            image  <span class="string">'bjreg.jpushoa.com/titan/jpush-cpp:v0.10'</span></span><br><span class="line">            args   <span class="string">' -v /home/push/.ssh/config:/home/push/.ssh/config -v /bin/docker:/bin/docker -v /var/run/docker.sock:/var/run/docker.sock  --cpus 4 '</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    environment &#123;</span><br><span class="line">        TITAN_JOB_TYPE=<span class="string">"dist"</span></span><br><span class="line">        TITAN_JOB_ID=<span class="string">"34"</span></span><br><span class="line">        TITAN_BUILD_ID=<span class="string">"23"</span></span><br><span class="line">        TITAN_SUB_COMMITIDS=<span class="string">"padding"</span></span><br><span class="line">    &#125;</span><br><span class="line">    stages  &#123;</span><br><span class="line">        stage(<span class="string">"模块配置(rollback-6-prod:vprod_v1)"</span>) &#123;</span><br><span class="line">            steps &#123;</span><br><span class="line">                sh <span class="string">"docker pull bjreg.jpushoa.com/titan-archive/tagconf/6-prod:vprod_v1"</span></span><br><span class="line">                sh <span class="string">"docker create --name titan_conf_6_prod_vprod_v1_$&#123;env.BUILD_ID&#125;  bjreg.jpushoa.com/titan-archive/tagconf/6-prod:vprod_v1"</span></span><br><span class="line">                sh <span class="string">"mkdir -p /opt/push/rollback/titan-conf"</span></span><br><span class="line">                sh <span class="string">"docker cp  titan_conf_6_prod_vprod_v1_$&#123;env.BUILD_ID&#125;:/archive/  /opt/push/rollback/titan-conf"</span></span><br><span class="line">                sh <span class="string">"docker rm -f  titan_conf_6_prod_vprod_v1_$&#123;env.BUILD_ID&#125; &amp;&amp; docker rmi -f  bjreg.jpushoa.com/titan-archive/tagconf/6-prod:vprod_v1"</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            stage(<span class="string">"模块二进制文件初始化(rollback bin image 拉取)"</span>) &#123;</span><br><span class="line">                steps &#123;</span><br><span class="line">                    sh <span class="string">"docker pull bjreg.jpushoa.com/titan-archive/dist/6-titan_cpp_demo:vtitan_cpp_demo_20_5_21_v1"</span></span><br><span class="line">                    sh <span class="string">"docker create --name  node-1-1-2-6-prod-idcbjdz-test02-titan_cpp_demo_$&#123;env.BUILD_ID&#125;   bjreg.jpushoa.com/titan-archive/dist/6-titan_cpp_demo:vtitan_cpp_demo_20_5_21_v1"</span></span><br><span class="line">                    sh <span class="string">"mkdir -p rollback"</span></span><br><span class="line">                    sh <span class="string">"docker cp  node-1-1-2-6-prod-idcbjdz-test02-titan_cpp_demo_$&#123;env.BUILD_ID&#125;:/archive/titan_cpp_demo/  rollback"</span></span><br><span class="line">                    sh <span class="string">"docker rm -f  node-1-1-2-6-prod-idcbjdz-test02-titan_cpp_demo_$&#123;env.BUILD_ID&#125;"</span></span><br><span class="line">                        sh <span class="string">"if [ -d /opt/push/rollback/titan-conf/archive/titan_cpp_demo ]; then  cp -r /opt/push/rollback/titan-conf/archive/titan_cpp_demo/*   rollback/titan_cpp_demo ;fi"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                stage(<span class="string">"模块配置(dist-6-prod:vprod_v2)"</span>) &#123;</span><br><span class="line">                    steps &#123;</span><br><span class="line">                        sh <span class="string">"docker pull bjreg.jpushoa.com/titan-archive/tagconf/6-prod:vprod_v2"</span></span><br><span class="line">                        sh <span class="string">"docker create --name titan_conf_6_prod_vprod_v2_$&#123;env.BUILD_ID&#125;  bjreg.jpushoa.com/titan-archive/tagconf/6-prod:vprod_v2"</span></span><br><span class="line">                        sh <span class="string">"mkdir -p /opt/push/titan-conf"</span></span><br><span class="line">                        sh <span class="string">"docker cp  titan_conf_6_prod_vprod_v2_$&#123;env.BUILD_ID&#125;:/archive/  /opt/push/titan-conf"</span></span><br><span class="line">                        sh <span class="string">"docker rm -f  titan_conf_6_prod_vprod_v2_$&#123;env.BUILD_ID&#125; &amp;&amp; docker rmi -f  bjreg.jpushoa.com/titan-archive/tagconf/6-prod:vprod_v2"</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    stage(<span class="string">"模块二进制文件初始化(dist bin image 拉取)"</span>) &#123;</span><br><span class="line">                        steps &#123;</span><br><span class="line">                            sh <span class="string">"docker pull bjreg.jpushoa.com/titan-archive/dist/6-titan_cpp_demo:vtitan_cpp_demo_20_5_21_v2"</span></span><br><span class="line">                            sh <span class="string">"docker create --name  node-1-1-2-6-prod-idcbjdz-test02-titan_cpp_demo_$&#123;env.BUILD_ID&#125;   bjreg.jpushoa.com/titan-archive/dist/6-titan_cpp_demo:vtitan_cpp_demo_20_5_21_v2"</span></span><br><span class="line">                            sh <span class="string">"mkdir -p dist"</span></span><br><span class="line">                            sh <span class="string">"docker cp  node-1-1-2-6-prod-idcbjdz-test02-titan_cpp_demo_$&#123;env.BUILD_ID&#125;:/archive/titan_cpp_demo/  dist"</span></span><br><span class="line">                            sh <span class="string">"docker rm -f  node-1-1-2-6-prod-idcbjdz-test02-titan_cpp_demo_$&#123;env.BUILD_ID&#125;"</span></span><br><span class="line">                                sh <span class="string">"if [ -d /opt/push/titan-conf/archive/titan_cpp_demo ]; then  cp -r /opt/push/titan-conf/archive/titan_cpp_demo/*   dist/titan_cpp_demo ;fi"</span></span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                        stage(<span class="string">"prod 灰度发布 titan_cpp_demo"</span>) &#123;</span><br><span class="line">                            stages  &#123;</span><br><span class="line">                                stage(<span class="string">"titan_cpp_demo 灰度发布 第1批 共1批 节点数： 1"</span>) &#123;</span><br><span class="line">                                    stages  &#123;</span><br><span class="line">                                        stage(<span class="string">"确认是否发布本批次"</span>) &#123;</span><br><span class="line">                                            steps &#123;</span><br><span class="line">                                                script &#123;</span><br><span class="line">                                                    <span class="keyword">def</span> body =  <span class="string">"""&#123;"job_id":$TITAN_JOB_ID, "build_id":$TITAN_BUILD_ID, "build_type":"$TITAN_JOB_TYPE", "pipeline_build_id":$&#123;env.BUILD_ID&#125;,  "result":"input"&#125;"""</span></span><br><span class="line">                                                    <span class="keyword">try</span> &#123;</span><br><span class="line">                                                        retry(<span class="number">3</span>) &#123;</span><br><span class="line">                                                            <span class="keyword">def</span> response = httpRequest <span class="string">acceptType:</span> <span class="string">'APPLICATION_JSON'</span>, <span class="string">contentType:</span> <span class="string">'APPLICATION_JSON'</span>, <span class="string">httpMode:</span> <span class="string">'POST'</span>, <span class="string">requestBody:</span> body, <span class="string">url:</span> callback_url</span><br><span class="line">                                                            println(<span class="string">'Status: '</span>+response.status)</span><br><span class="line">                                                            println(<span class="string">'Status: '</span>+response.content)</span><br><span class="line">                                                        &#125;</span><br><span class="line">                                                    &#125;</span><br><span class="line">                                                    <span class="keyword">catch</span> (ex1) &#123;</span><br><span class="line">                                                        sh <span class="string">"echo http post err"</span></span><br><span class="line">                                                    &#125;</span><br><span class="line">                                                &#125;</span><br><span class="line">                                                input(<span class="string">'是否继续发布 ?'</span>)</span><br><span class="line">                                            &#125;</span><br><span class="line">                                        &#125;</span><br><span class="line">                                        stage(<span class="string">"titan_cpp_demo 灰度发布 第1 批 共1批ip : 172.17.8.193"</span>) &#123;</span><br><span class="line">                                            steps &#123;</span><br><span class="line">                                                dir(<span class="string">"./"</span>) &#123;</span><br><span class="line">                                                    script &#123;</span><br><span class="line">                                                        echo <span class="string">"define job variables"</span></span><br><span class="line">                                                        <span class="keyword">def</span> jobName = sh(<span class="string">script:</span> <span class="string">"echo $&#123;env.JOB_NAME&#125;"</span>, <span class="string">returnStdout:</span> <span class="literal">true</span>).trim()</span><br><span class="line">                                                        echo <span class="string">"define app variables"</span></span><br><span class="line">                                                        <span class="keyword">def</span> appDir = <span class="string">"/opt/push/titan_cpp_demo"</span></span><br><span class="line">                                                        <span class="keyword">def</span> appCmd = <span class="string">"cd /opt/push/titan_cpp_demo &amp;&amp; ./main1"</span></span><br><span class="line">                                                        <span class="keyword">def</span> chkCmd = <span class="string">"echo padding"</span></span><br><span class="line"></span><br><span class="line">                                                        echo <span class="string">"define script local variables"</span></span><br><span class="line">                                                        <span class="keyword">def</span> batchhosts = [<span class="string">'172.17.8.193'</span>]</span><br><span class="line">                                                        <span class="keyword">def</span> rollbackHosts = []</span><br><span class="line">                                                        <span class="keyword">def</span> remote = [:]</span><br><span class="line">                                                        remote.name = <span class="string">'titan-vm-cicd'</span></span><br><span class="line">                                                        remote.allowAnyHosts = <span class="literal">true</span></span><br><span class="line">                                                        <span class="keyword">try</span> &#123;</span><br><span class="line">                                                            <span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; batchhosts.size(); ++i) &#123;</span><br><span class="line">                                                                echo <span class="string">"app deploy jobname: $&#123;jobName&#125; sub mod titan_cpp_demo host: $&#123;batchhosts[i]&#125; begin"</span></span><br><span class="line">                                                                rollbackHosts &lt;&lt; batchhosts[i]</span><br><span class="line">                                                                withCredentials([usernamePassword(<span class="string">credentialsId:</span> <span class="string">'titan-robot-cred-id'</span>, <span class="string">passwordVariable:</span> <span class="string">'passwd'</span>, <span class="string">usernameVariable:</span> <span class="string">'user'</span>)]) &#123;</span><br><span class="line">                                                                    remote.host = batchhosts[i]</span><br><span class="line">                                                                    remote.user = user</span><br><span class="line">                                                                    remote.password = passwd</span><br><span class="line">                                                                    timeout(<span class="number">5</span>) &#123;</span><br><span class="line">                                                                        sshCommand <span class="string">remote:</span> remote, <span class="string">command:</span> <span class="string">"sudo -upush sh -c \"mkdir -p /opt/push/titan_cpp_demo\""</span></span><br><span class="line">                                                                        sh <span class="string">"sshpass -p \"$&#123;passwd&#125;\" rsync -cvzrltD  --rsync-path=\"sudo -upush -i rsync\"  dist/titan_cpp_demo/  $&#123;user&#125;@$&#123;batchhosts[i]&#125;:/opt/push/titan_cpp_demo"</span></span><br><span class="line">                                                                        retry(<span class="number">3</span>) &#123;</span><br><span class="line">                                                                            sshCommand <span class="string">remote:</span> remote, <span class="string">command:</span> <span class="string">"sudo -upush sh -c \"$&#123;appCmd&#125;\""</span></span><br><span class="line">                                                                            sleep <span class="string">time:</span> <span class="number">1000</span>, <span class="string">unit:</span> <span class="string">'MILLISECONDS'</span></span><br><span class="line">                                                                        &#125;</span><br><span class="line">                                                                    &#125;</span><br><span class="line">                                                                &#125;</span><br><span class="line">                                                                </span><br><span class="line">                                                                echo <span class="string">"app health check jobname: $&#123;jobName&#125; host: $&#123;batchhosts[i]&#125; begin"</span></span><br><span class="line">                                                                <span class="keyword">try</span> &#123;</span><br><span class="line">                                                                    timeout(<span class="number">5</span>) &#123;</span><br><span class="line">                                                                        retry(<span class="number">3</span>) &#123;</span><br><span class="line">                                                                            <span class="keyword">try</span> &#123;</span><br><span class="line">                                                                                withCredentials([usernamePassword(<span class="string">credentialsId:</span> <span class="string">'titan-robot-cred-id'</span>, <span class="string">passwordVariable:</span> <span class="string">'passwd'</span>, <span class="string">usernameVariable:</span> <span class="string">'user'</span>)]) &#123;</span><br><span class="line">                                                                                remote.host = batchhosts[i]</span><br><span class="line">                                                                                remote.user = user</span><br><span class="line">                                                                                remote.password = passwd</span><br><span class="line">                                                                                sshCommand <span class="string">remote:</span> remote, <span class="string">command:</span> <span class="string">"sudo -upush sh -c \"$&#123;chkCmd&#125;\""</span></span><br><span class="line">                                                                                &#125;</span><br><span class="line">                                                                                echo <span class="string">"app health check success jobname: $&#123;jobName&#125; host: $&#123;batchhosts[i]&#125; "</span></span><br><span class="line">                                                                            &#125;</span><br><span class="line">                                                                            <span class="keyword">catch</span> (exc2) &#123;</span><br><span class="line">                                                                                echo <span class="string">"app health check failed jobname: $&#123;jobName&#125; host: $&#123;batchhosts[i]&#125; for execute reload cmd return not 0 "</span></span><br><span class="line">                                                                                sleep <span class="number">2</span></span><br><span class="line">                                                                                <span class="keyword">throw</span> exc2</span><br><span class="line">                                                                            &#125;</span><br><span class="line">                                                                        &#125;</span><br><span class="line">                                                                    &#125;</span><br><span class="line">                                                                &#125;</span><br><span class="line">                                                                <span class="keyword">catch</span> (exc3) &#123;</span><br><span class="line">                                                                    echo <span class="string">"app health check failed jobname: $&#123;jobName&#125; host: $&#123;batchhosts[i]&#125; for timeout default 5 min"</span></span><br><span class="line">                                                                    <span class="keyword">throw</span> exc3</span><br><span class="line">                                                                &#125;</span><br><span class="line">                                                                echo <span class="string">"app health check success jobname: $&#123;jobName&#125; host: $&#123;batchhosts[i]&#125; end"</span></span><br><span class="line">                                                                echo <span class="string">"app deploy success jobname: $&#123;jobName&#125; sub mod titan_cpp_demo host: $&#123;batchhosts[i]&#125; end"</span></span><br><span class="line">                                                                &#125;</span><br><span class="line">                                                            &#125;</span><br><span class="line">                                                            <span class="keyword">catch</span> (exc) &#123;</span><br><span class="line">                                                                echo <span class="string">"detect exception in deploy or health check"</span></span><br><span class="line">                                                                input(<span class="string">'发布失败是否回滚已发布节点 ?'</span>) </span><br><span class="line">                                                                <span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; rollbackHosts.size(); ++i) &#123;</span><br><span class="line">                                                                    echo <span class="string">"app rollback jobname: $&#123;jobName&#125; sub mod titan_cpp_demohost: $&#123;rollbackHosts[i]&#125; begin"</span></span><br><span class="line">                                                                    withCredentials([usernamePassword(<span class="string">credentialsId:</span> <span class="string">'titan-robot-cred-id'</span>, <span class="string">passwordVariable:</span> <span class="string">'passwd'</span>, <span class="string">usernameVariable:</span> <span class="string">'user'</span>)]) &#123;</span><br><span class="line">                                                                        remote.host = batchhosts[i]</span><br><span class="line">                                                                        remote.user = user</span><br><span class="line">                                                                        remote.password = passwd</span><br><span class="line">                                                                        timeout(<span class="number">5</span>) &#123;</span><br><span class="line">                                                                            retry(<span class="number">3</span>) &#123;</span><br><span class="line">                                                                                sshCommand <span class="string">remote:</span> remote, <span class="string">command:</span> <span class="string">"sudo -upush sh -c \"mkdir -p /opt/push/titan_cpp_demo\""</span></span><br><span class="line">                                                                                sh <span class="string">"sshpass -p \"$&#123;passwd&#125;\" rsync -cvzrltD  --rsync-path=\"sudo -upush -i rsync\"  rollback/titan_cpp_demo/  $&#123;user&#125;@$&#123;rollbackHosts[i]&#125;:/opt/push/titan_cpp_demo"</span></span><br><span class="line">                                                                                sshCommand <span class="string">remote:</span> remote, <span class="string">command:</span> <span class="string">"sudo -upush sh -c \"$&#123;appCmd&#125;\""</span></span><br><span class="line">                                                                            &#125;</span><br><span class="line">                                                                        &#125;</span><br><span class="line">                                                                    &#125;</span><br><span class="line">                                                                    </span><br><span class="line">                                                                    echo <span class="string">"app health check jobname: $&#123;jobName&#125; host: $&#123;batchhosts[i]&#125; begin"</span></span><br><span class="line">                                                                    <span class="keyword">try</span> &#123;</span><br><span class="line">                                                                        timeout(<span class="number">5</span>) &#123;</span><br><span class="line">                                                                            retry(<span class="number">3</span>) &#123;</span><br><span class="line">                                                                                <span class="keyword">try</span> &#123;</span><br><span class="line">                                                                                    withCredentials([usernamePassword(<span class="string">credentialsId:</span> <span class="string">'titan-robot-cred-id'</span>, <span class="string">passwordVariable:</span> <span class="string">'passwd'</span>, <span class="string">usernameVariable:</span> <span class="string">'user'</span>)]) &#123;</span><br><span class="line">                                                                                    remote.host = batchhosts[i]</span><br><span class="line">                                                                                    remote.user = user</span><br><span class="line">                                                                                    remote.password = passwd</span><br><span class="line">                                                                                    sshCommand <span class="string">remote:</span> remote, <span class="string">command:</span> <span class="string">"sudo -upush sh -c \"$&#123;chkCmd&#125;\""</span></span><br><span class="line">                                                                                    &#125;</span><br><span class="line">                                                                                    echo <span class="string">"app health check success jobname: $&#123;jobName&#125; host: $&#123;batchhosts[i]&#125; "</span></span><br><span class="line">                                                                                &#125;</span><br><span class="line">                                                                                <span class="keyword">catch</span> (exc2) &#123;</span><br><span class="line">                                                                                    echo <span class="string">"app health check failed jobname: $&#123;jobName&#125; host: $&#123;batchhosts[i]&#125; for execute reload cmd return not 0 "</span></span><br><span class="line">                                                                                    sleep <span class="number">2</span></span><br><span class="line">                                                                                    <span class="keyword">throw</span> exc2</span><br><span class="line">                                                                                &#125;</span><br><span class="line">                                                                            &#125;</span><br><span class="line">                                                                        &#125;</span><br><span class="line">                                                                    &#125;</span><br><span class="line">                                                                    <span class="keyword">catch</span> (exc3) &#123;</span><br><span class="line">                                                                        echo <span class="string">"app health check failed jobname: $&#123;jobName&#125; host: $&#123;batchhosts[i]&#125; for timeout default 5 min"</span></span><br><span class="line">                                                                        <span class="keyword">throw</span> exc3</span><br><span class="line">                                                                    &#125;</span><br><span class="line">                                                                    echo <span class="string">"app health check success jobname: $&#123;jobName&#125; host: $&#123;batchhosts[i]&#125; end"</span></span><br><span class="line">                                                                    echo <span class="string">"app rollback success jobname: $&#123;jobName&#125; titan_cpp_demo host: $&#123;rollbackHosts[i]&#125; end"</span></span><br><span class="line">                                                                &#125;</span><br><span class="line">                                                            &#125;</span><br><span class="line">                                                        &#125;</span><br><span class="line">                                                    &#125;</span><br><span class="line">                                                &#125;</span><br><span class="line">                                            &#125;</span><br><span class="line">                                        &#125;</span><br><span class="line">                                    &#125;</span><br><span class="line">                                &#125;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                        post &#123;</span><br><span class="line">                            always &#123;</span><br><span class="line">                                dir(<span class="string">"./"</span>) &#123;</span><br><span class="line">                                    script &#123;</span><br><span class="line">                                        <span class="keyword">def</span> currCommitId = sh(<span class="string">script:</span> <span class="string">"echo 5_21_v2"</span>, <span class="string">returnStdout:</span> <span class="literal">true</span>).trim()</span><br><span class="line">                                        <span class="keyword">def</span> body =  <span class="string">"""&#123;"job_id":$TITAN_JOB_ID, "build_id":$TITAN_BUILD_ID, "build_type":"$TITAN_JOB_TYPE", "commit_id":"$currCommitId", "sub_commitids":"$TITAN_SUB_COMMITIDS","pipeline_build_id":$&#123;env.BUILD_ID&#125;, "duration":$&#123;currentBuild.duration&#125;, "result":"$&#123;currentBuild.currentResult&#125;"&#125;"""</span></span><br><span class="line">                                        <span class="keyword">try</span> &#123;</span><br><span class="line">                                            timeout(<span class="number">3</span>) &#123;</span><br><span class="line">                                                retry(<span class="number">3</span>) &#123;</span><br><span class="line">                                                    <span class="keyword">def</span> response = httpRequest <span class="string">acceptType:</span> <span class="string">'APPLICATION_JSON'</span>, <span class="string">contentType:</span> <span class="string">'APPLICATION_JSON'</span>, <span class="string">httpMode:</span> <span class="string">'POST'</span>, <span class="string">requestBody:</span> body, <span class="string">url:</span> callback_url</span><br><span class="line">                                                    println(<span class="string">'Status: '</span>+response.status)</span><br><span class="line">                                                    println(<span class="string">'Status: '</span>+response.content)</span><br><span class="line">                                                &#125;</span><br><span class="line">                                            &#125;</span><br><span class="line">                                        &#125;</span><br><span class="line">                                        <span class="keyword">catch</span> (ex1) &#123;</span><br><span class="line">                                            sh <span class="string">"echo http post err"</span></span><br><span class="line">                                        &#125;</span><br><span class="line">                                    &#125;</span><br><span class="line">                                &#125;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/05/15/go%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" rel="next" title="go错误处理">
+                <i class="fa fa-chevron-left"></i> go错误处理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/06/12/go%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/" rel="prev" title="go语言类型">
+                go语言类型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">tomaswul</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tomaswul</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
